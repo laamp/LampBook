@@ -1,24 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% if title %}
-    <title>{{ title }} | LampBook</title>
-    {% else %}
-    <title>Welcome to LampBook</title>
-    {% endif %}
-</head>
-
-<body>
-    <h1>Hello, {{ user.username }}</h1>
-    {% for post in posts %}
-    <div>
-        <p>{{ post.author.username }} says: <b>{{post.body}}</b></p>
-    </div>
-    {% endfor %}
-</body>
-
-</html>
+{% block content %}
+<h2>Hi, {{ user.username }}!</h2>
+{% for post in posts %}
+<article>
+    <h3>{{ post.author.username }}</h3>
+    <p> says: {{ post.body }}</p>
+</article>
+{% endfor %}
+{% endblock content %}
