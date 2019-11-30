@@ -9,3 +9,5 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField("Remember me")
     submit = SubmitField("Log in")
 
+
+# left off at user registration
